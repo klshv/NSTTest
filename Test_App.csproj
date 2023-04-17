@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>5bade993-0ab2-4782-a829-5b2fc94e8af5</UserSecretsId>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <AssemblyName>Test_App</AssemblyName>
+        <RootNamespace>Test_App</RootNamespace>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'Test_app' " />
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="12.0.0" />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" />
+        <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="6.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Models\Dto\PersonShortDto.cs" />
+        <Compile Remove="Models\Enums\**" />
+        <Compile Remove="Data\Enums\**" />
+        <Compile Remove="App\Enums\**" />
+        <Compile Remove="App\Domain\Address.cs" />
+        <Compile Remove="App\Domain\Applicant.cs" />
+        <Compile Remove="App\Domain\ContactData.cs" />
+        <Compile Remove="App\Domain\Employee.cs" />
+        <Compile Remove="App\Interfaces\DataServices\IApplicantDataService.cs" />
+        <Compile Remove="App\Interfaces\DataServices\IEmployeeDataService.cs" />
+        <Compile Remove="App\Interfaces\Services\IApplicantService.cs" />
+        <Compile Remove="App\Interfaces\Services\IEmployeeService.cs" />
+        <Compile Remove="App\Services\ApplicantService.cs" />
+        <Compile Remove="App\Services\EmployeeService.cs" />
+        <Compile Remove="Controllers\EmployeeController.cs" />
+        <Compile Remove="Data\Services\EmployeeDataService.cs" />
+        <Compile Remove="Data\Entities\EmployeeEntity.cs" />
+        <Compile Remove="Data\Entities\ContactDataEntity.cs" />
+        <Compile Remove="Data\Entities\ApplicantEntity.cs" />
+        <Compile Remove="Data\Entities\AddressEntity.cs" />
+        <Compile Remove="Models\Dto\EmployeeShortDto.cs" />
+        <Compile Remove="Models\Dto\AddressDto.cs" />
+        <Compile Remove="Models\Dto\ApplicantCreateDto.cs" />
+        <Compile Remove="Models\Dto\ApplicantListDto.cs" />
+        <Compile Remove="Models\Dto\ApplicantDto.cs" />
+        <Compile Remove="Models\Dto\ApplicantShortDto.cs" />
+        <Compile Remove="Models\Dto\ContactDataDto.cs" />
+        <Compile Remove="Models\Dto\EmployeeCreateDto.cs" />
+        <Compile Remove="Models\Dto\EmployeeDto.cs" />
+        <Compile Remove="Models\Dto\EmployeeListDto.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Remove="Models\Enums\**" />
+        <EmbeddedResource Remove="Data\Enums\**" />
+        <EmbeddedResource Remove="App\Enums\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Models\Enums\**" />
+        <None Remove="Data\Enums\**" />
+        <None Remove="App\Enums\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Remove="Models\Enums\**" />
+        <Content Remove="Data\Enums\**" />
+        <Content Remove="App\Enums\**" />
+    </ItemGroup>
+
+</Project>
